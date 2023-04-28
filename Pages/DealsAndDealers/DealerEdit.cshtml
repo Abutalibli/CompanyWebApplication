@@ -1,0 +1,60 @@
+﻿@page
+@model CompanyWebApplication.Pages.DealsAndDealers.DealerEditModel
+@{
+}
+
+<br>
+<h2>Edit Dealer</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-colse' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+
+<form method="POST">
+    <input type="hidden" name="id" value="@Model.dealinfo.id">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">FIO</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="fio" value="@Model.dealinfo.fio">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">PassportNumber</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="passportnumber" value="@Model.dealinfo.passportnumber">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">PhoneNumber</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="phonenumber" value="@Model.dealinfo.phonenumber">
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>@Model.successMessage</strong>
+                    <button type='button' class='btn-colse' data-bs-dismiss='alert' aria-label='Close'></button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Sumbit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button"> Cancel</a>
+
+        </div>
+
+    </div>
+</form>

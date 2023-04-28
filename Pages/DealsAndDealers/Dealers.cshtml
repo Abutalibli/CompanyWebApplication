@@ -1,0 +1,33 @@
+﻿@page
+@model CompanyWebApplication.Pages.DealsAndDealers.DealersModel
+@{
+}
+
+<br>
+<h2>List of Dealers</h2>
+<a class='btn btn-primary btn-sm' href='/DealsAndDealers/CreateDealers'>New Dealers</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fio</th>
+            <th>Pass</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listDealers)
+        {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.fio</td>
+                    <td>@item.passportnumber</td>
+                    <td>@item.phonenumber</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/DealsAndDealers/DealerEdit?id=@item.id">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="/DealsAndDealers/DealersDelete?id=@item.id">Delete</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>

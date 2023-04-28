@@ -1,0 +1,40 @@
+﻿@page
+@model CompanyWebApplication.Pages.DealsAndDealers.DealsModel
+@{
+}
+
+<br>
+<h2>List of Deals</h2>
+<a class='btn btn-primary btn-sm' href='/DealsAndDealers/CreateDeals'>New Deals</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>GoodName</th>
+            <th>GoodKolvo</th>
+            <th>GoodPrice</th>
+            <th>Sum</th>
+            <th>Date</th>
+            <th>IdDealer</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listDeals)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.kolvo</td>
+                <td>@item.Price</td>
+                <td>@item.Sum</td>
+                <td>@item.DateD</td>
+                <td>@item.IdDealer</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/DealsAndDealers/EditDeals?id=@item.id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/DealsAndDealers/DealsDelete?id=@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

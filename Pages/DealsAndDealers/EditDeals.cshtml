@@ -1,0 +1,78 @@
+﻿@page
+@model CompanyWebApplication.Pages.DealsAndDealers.EditDealsModel
+@{
+}
+
+<br>
+<h2>Edit Deal</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-colse' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+
+<form method="POST">
+    <input type="hidden" name="id" value="@Model.dealinfo.id">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-6">
+                <input type="text" class="form-control" name="name" value="@Model.dealinfo.name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Kolvo</label>
+        <div class="col-sm-6">
+                <input type="text" class="form-control" name="kolvo" value="@Model.dealinfo.kolvo">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Price</label>
+        <div class="col-sm-6">
+                <input type="text" class="form-control" name="price" value="@Model.dealinfo.Price">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Sum</label>
+        <div class="col-sm-6">
+                <input type="text" class="form-control" name="sum" value="@Model.dealinfo.Sum">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Date</label>
+        <div class="col-sm-6">
+                <input type="text" class="form-control" name="date" value="@Model.dealinfo.DateD">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">IdDEALER</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="iddealer" value="@Model.dealinfo.IdDealer">
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>@Model.successMessage</strong>
+                    <button type='button' class='btn-colse' data-bs-dismiss='alert' aria-label='Close'></button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Sumbit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button"> Cancel</a>
+
+        </div>
+
+    </div>
+</form>
